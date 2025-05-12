@@ -58,3 +58,5 @@ jobs:
           app-name: 'unity-voice-plan'
           slot-name: 'Production'
           package: .
+          configuration-settings: |
+            NEXT_PUBLIC_API_URL=https://unity-voice-plan-d3c4b9fqexdgckc4.israelcentral-01.azurewebsites.net/api
