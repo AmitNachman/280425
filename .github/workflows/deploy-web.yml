@@ -32,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: web-app
-          path: apps/web/.next
+          path: apps/web
 
   deploy:
     runs-on: ubuntu-latest
@@ -57,6 +57,4 @@ jobs:
         with:
           app-name: 'unity-voice-plan'
           slot-name: 'Production'
-          package: .
-          configuration-settings: |
-            NEXT_PUBLIC_API_URL=https://unity-voice-plan-d3c4b9fqexdgckc4.israelcentral-01.azurewebsites.net/api
+          package: ./web
