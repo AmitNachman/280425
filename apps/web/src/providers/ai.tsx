@@ -1,4 +1,4 @@
-import {ReactNode} from "react";
+/*import {ReactNode} from "react";
 import { createAI } from 'ai/rsc';
 
 async function submitUserMessage(input: string) {
@@ -14,3 +14,4 @@ export const AIContext = createAI<any[], ReactNode[]>({
   initialAIState: [],
   actions: { submitUserMessage },
 });
+*/
