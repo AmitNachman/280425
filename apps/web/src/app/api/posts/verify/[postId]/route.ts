@@ -7,10 +7,12 @@ import { getSafeDbPool } from '../../../../lib/db';
  * בדיקה אם פוסט קיים - GET /api/posts/verify/[postId]
  */
 export async function GET(
-  request: NextRequest,
-  { params }: { params: { postId: string } }
+  request: NextRequest
 ) {
-  console.group(`GET /api/posts/verify/${params.postId}`);
+  const url = new URL(request.url);
+  const pathname = url.pathname;
+  const postId = decodeURIComponent(pathname.split("/").pop()!);
+  console.group(`GET /api/posts/verify/${postId}`);
   console.log('Request received at:', new Date().toISOString());
   
   try {
@@ -22,7 +24,7 @@ export async function GET(
       return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
     }
     
-    const postId = params.postId;
+    //const postId = params.postId;
     console.log(`Verifying post exists: ${postId}`);
     
     if (!postId) {

@@ -271,15 +271,15 @@ function shuffleArray<T>(array: T[]): T[] {
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: { topicName: string } }
+  { params }: any
 ) {
+  const topicName = params.topicName;
+  console.log('Creating post for topic:', topicName);
   console.log('POST /api/create-post - Request received');
   
+
   try {
-    // קבלת שם הנושא מפרמטרי ה-URL
-    const topicName = decodeURIComponent(params.topicName);
-    console.log(`Creating post for topic: ${topicName}`);
-    
+
     // אימות המשתמש
     const authResult = await verifyAuth(request);
     if (!authResult.isValid) {
@@ -368,7 +368,7 @@ try {
   console.error("OpenAI generation error:", openaiError);
   
   // Return a fallback post instead of an error
-  return NextResponse.json(getFallbackPost(params.topicName));
+  return NextResponse.json(getFallbackPost(topicName));
 }
     
   } catch (error: any) {
@@ -376,8 +376,7 @@ try {
     
     // במקרה של שגיאה כללית, החזר פוסט גנרי
     return NextResponse.json(
-      getFallbackPost(params.topicName), 
-      { status: 200 }
+      getFallbackPost(topicName), { status: 200 }
     );
   }
 }

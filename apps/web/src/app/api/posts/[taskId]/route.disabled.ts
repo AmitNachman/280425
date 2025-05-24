@@ -6,11 +6,9 @@ import { getPostsByTaskId, createOrUpdatePost } from '../../services/postService
 /**
  * Get posts for a specific task ID - GET /api/posts/[taskId]
  */
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { taskId: string } }
-) {
-  console.group(`GET /api/posts/${params.taskId}`);
+export async function GET(request: NextRequest, { params }: any) {
+  const taskId = params.taskId;
+  console.group(`GET /api/posts/${taskId}`);
   console.log('Request received at:', new Date().toISOString());
   
   try {
@@ -22,7 +20,6 @@ export async function GET(
       return NextResponse.json({ error: 'Authentication required' }, { status: 401 });
     }
     
-    const taskId = params.taskId;
     console.log(`Retrieving posts for taskId: ${taskId}`);
     
     if (!taskId) {
@@ -67,13 +64,11 @@ export async function GET(
 /**
  * Create or update a post for a specific task ID - POST /api/posts/[taskId]
  */
-export async function POST(
-  request: NextRequest,
-  { params }: { params: { taskId: string } }
-) {
-  console.group(`POST /api/posts/${params.taskId}`);
+export async function POST(request: NextRequest, { params }: any) {
+  const taskId = params.taskId;
+  console.group(`POST /api/posts/${taskId}`);
   console.log('Request received at:', new Date().toISOString());
-  
+
   try {
     // Verify authentication
     const authResult = await verifyAuth(request);
@@ -95,7 +90,6 @@ export async function POST(
     }
     
     // Extract parameters
-    const taskId = params.taskId;
     const postId = body.PostID || body.postId;
     const postContent = body.PostContent || body.postContent;
     const picture = body.Picture || body.picture || null;

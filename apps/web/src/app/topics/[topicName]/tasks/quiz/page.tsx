@@ -4,7 +4,8 @@
 import React, { useState, useEffect } from 'react';
 import { useRouter, useParams, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
-import { FaStar, FaTrophy, FaStopwatch } from 'react-icons/fa';
+import { FaStar, FaTrophy, FaStopwatch } from "react-icons/fa";
+
 import { getAuthToken } from '../../../../../lib/auth';
 import { useAuth } from '../../../../../hooks/useAuth';
 import { formatTopicNameForDb, formatTopicNameForUrl, areTopicNamesEquivalent } from '../../../../lib/topicUtils';
@@ -544,12 +545,7 @@ const completeQuizTask = async () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 p-6 relative" dir="rtl">
       {/* Google Font */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
-        body {
-          font-family: 'Rubik', sans-serif;
-        }
-      `}</style>
+     
 
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-6 mt-2">{pageTitle}</h1>
 
@@ -559,17 +555,23 @@ const completeQuizTask = async () => {
       <div className="max-w-4xl mx-auto bg-white rounded-2xl p-6 shadow-lg mb-6">
         <div className="flex justify-between items-center">
           <div className="text-center transform hover:scale-110 transition-all duration-300">
-            <FaStar className="text-yellow-500 text-3xl mb-2 mx-auto" />
+          <FaStar {...({ className: "text-yellow-500 text-3xl mb-2 mx-auto" } as any)} />
+
+
             <div className="text-3xl font-bold text-orange-500 mb-1">{score}</div>
             <div className="text-sm text-gray-600">ניקוד</div>
           </div>
           <div className="text-center transform hover:scale-110 transition-all duration-300">
-            <FaTrophy className="text-orange-500 text-3xl mb-2 mx-auto" />
+          <FaTrophy {...({ className: "text-orange-500 text-3xl mb-2 mx-auto" } as any)} />
+
+
             <div className="text-3xl font-bold text-orange-500 mb-1">{streak}</div>
             <div className="text-sm text-gray-600">רצף</div>
           </div>
           <div className="text-center transform hover:scale-110 transition-all duration-300">
-            <FaStopwatch className="text-blue-500 text-3xl mb-2 mx-auto" />
+          <FaStopwatch {...({ className: "text-blue-500 text-3xl mb-2 mx-auto" } as any)} />
+
+
             <div className="text-3xl font-bold text-orange-500 mb-1">{formatTime(timer)}</div>
             <div className="text-sm text-gray-600">זמן</div>
           </div>
@@ -616,9 +618,7 @@ const completeQuizTask = async () => {
         <button
           onClick={handleSubmit}
           disabled={!selectedAnswer}
-          className="mt-8 px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl text-lg font-semibold
-                   hover:from-orange-600 hover:to-red-600 transition-all duration-300
-                   disabled:opacity-50 disabled:cursor-not-allowed w-full md:w-auto"
+          className="mt-8 px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl text-lg font-semibold hover:from-orange-600 hover:to-red-600 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed w-full md:w-auto"
         >
           שלח תשובה
         </button>

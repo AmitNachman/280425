@@ -13,11 +13,5 @@
     "start": {
       "dependsOn": ["build"]
     }
-  },
-  "pipeline": {
-    "dev": {
-      "cache": false,
-      "persistent": true
-    }
   }
 }

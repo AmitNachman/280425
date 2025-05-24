@@ -1,7 +1,17 @@
 'use client';
 import { Eye, EyeOff } from 'lucide-react';
-const PasswordField = ({ value, onChange, showPassword, toggleShowPassword }) => (
-    <div>
+const PasswordField = ({
+  value,
+  onChange,
+  showPassword,
+  toggleShowPassword,
+}: {
+  value: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  showPassword: boolean;
+  toggleShowPassword: () => void;
+}) => (
+      <div>
       <label htmlFor="password" className="block text-sm font-medium text-gray-900">
         Password
       </label>

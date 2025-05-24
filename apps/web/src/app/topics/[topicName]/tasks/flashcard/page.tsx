@@ -780,12 +780,7 @@ export default function FlashcardTask() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 p-6 relative" dir="rtl">
       {/* Google Font */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
-        body {
-          font-family: 'Rubik', sans-serif;
-        }
-      `}</style>
+      
 
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-6 mt-2">{pageTitle}</h1>
 

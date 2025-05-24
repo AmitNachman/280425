@@ -1063,12 +1063,7 @@ const handleSubmitComment = async () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 p-6 relative" dir="ltr">
       {/* Google Font */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap');
-        body {
-          font-family: 'Rubik', sans-serif;
-        }
-      `}</style>
+      
 
       <h1 className="text-3xl font-bold text-center text-gray-800 mb-6 mt-2">{pageTitle}</h1>
       
@@ -1109,7 +1104,7 @@ const handleSubmitComment = async () => {
               onClick={handleLikeToggle}
               className="flex items-center space-x-2 hover:text-red-500 transition-colors"
             >
-              <FaHeart className={isLiked ? 'text-red-500' : ''} />
+            <FaHeart {...({ style: { color: isLiked ? '#ef4444' : 'inherit' } } as any)} />
               <span className="ml-2">{socialMetrics.likes}</span>
             </button>
             <div className="flex items-center space-x-2">
@@ -1126,7 +1121,7 @@ const handleSubmitComment = async () => {
         {/* Required Words Section */}
         <div className="bg-white rounded-2xl shadow-xl p-8 mb-8">
           <div className="flex items-center mb-6">
-            <FaInfoCircle className="text-orange-500 mr-3 text-xl" />
+          <FaInfoCircle {...({ className: 'text-orange-500 mr-3 text-xl' } as any)} />
             <h3 className="text-xl font-bold text-gray-800">Required Words:</h3>
           </div>
           <div className="flex flex-wrap gap-3">

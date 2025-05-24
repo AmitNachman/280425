@@ -267,7 +267,7 @@ async function updateUserScore(taskId: string, score: number): Promise<boolean> 
  * @param wordIds - מערך של מזהי מילים
  * @returns האם ההוספה הצליחה
  */
-export async function addWordsToTask(
+ addWordsToTask(
   taskId: string,
   wordIds: string[]
 ): Promise<boolean> {

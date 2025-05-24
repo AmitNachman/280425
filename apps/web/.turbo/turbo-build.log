@@ -1,0 +1,36 @@
+
+
+> web@0.1.0 build
+> next build
+
+[1G[0K   [1m[38;2;173;127;168m▲ Next.js 15.3.2[39m[22m
+   - Environments: .env
+
+ [37m[1m [22m[39m Creating an optimized production build ...
+[31mFailed to compile.
+[39m
+./src/app/topics/[topicName]/tasks/quiz/page.tsx
+Module parse failed: Unterminated string constant (624:65)
+File was processed with these loaders:
+ * ../../node_modules/next/dist/build/webpack/loaders/next-flight-client-module-loader.js
+ * ../../node_modules/next/dist/build/webpack/loaders/next-swc-loader.js
+You may need an additional loader to handle the result of these loaders.
+|                         onClick: handleSubmit,
+|                         disabled: !selectedAnswer,
+>                         className: "jsx-a601612189e0457" + " " + "mt-8 px-8 py-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-xl text-lg font-semibold
+|                    hover:from-orange-600 hover:to-red-600 transition-all duration-300
+|                    disabled:opacity-50 disabled:cursor-not-allowed w-full md:w-auto",
+
+Import trace for requested module:
+./src/app/topics/[topicName]/tasks/quiz/page.tsx
+
+
+> Build failed because of webpack errors
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m Lifecycle script `build` failed with error:
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mcode[39m [33m1[39m
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mpath[39m /Users/amitnachman/Desktop/280425/apps/web
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mworkspace[39m web@0.1.0
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mlocation[39m /Users/amitnachman/Desktop/280425/apps/web
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m command failed
+[1G[0K⠙[1G[0K[1mnpm[22m [31merror[39m [94mcommand[39m sh -c next build
+[1G[0K⠙[1G[0K
