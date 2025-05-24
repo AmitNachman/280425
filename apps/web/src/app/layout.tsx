@@ -1,4 +1,4 @@
-import { Inter, Roboto_Mono } from "next/font/google";
+/*import { Inter, Roboto_Mono } from "next/font/google";
 import { Metadata } from "next";
 import "./globals.css";
 
@@ -35,4 +35,27 @@ export default function RootLayout({
       </body>
     </html>
   );
+}*/
+
+import { Metadata } from "next";
+import "./globals.css";
+
+export const metadata: Metadata = {
+  title: "Unity Voice",
+  description: "Unity Voice app",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body className="antialiased">
+        {children}
+      </body>
+    </html>
+  );
 }
+
