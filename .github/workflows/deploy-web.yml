@@ -25,8 +25,12 @@ jobs:
       - name: Set environment variables (NEXT_PUBLIC_API_URL)
         run: echo "NEXT_PUBLIC_API_URL=https://unity-voice-plan.azurewebsites.net/api" >> $GITHUB_ENV
 
-      - name: Install dependencies
+      - name: Install Web dependencies
         run: npm install
+
+      - name: Install API dependencies
+        run: npm install
+        working-directory: ../../api
 
       - name: Build project
         run: npm run build
@@ -52,6 +56,11 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
+      - name: Azure Login 🔐
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Download artifact
         uses: actions/download-artifact@v4
