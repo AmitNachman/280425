@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: apps/web
+        working-directory: .  # שורש המונורפו
 
     steps:
       - name: Checkout code
@@ -25,15 +25,11 @@ jobs:
       - name: Set environment variables (NEXT_PUBLIC_API_URL)
         run: echo "NEXT_PUBLIC_API_URL=https://unity-voice-plan.azurewebsites.net/api" >> $GITHUB_ENV
 
-      - name: Install Web dependencies
+      - name: Install all dependencies (root workspace)
         run: npm install
-
-      - name: Install API dependencies
-        run: npm install
-        working-directory: ../../api
 
       - name: Build project
-        run: npm run build
+        run: npm run build --workspace=web
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
