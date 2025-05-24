@@ -140,12 +140,7 @@ export default function Topics() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 p-6 relative">
       {/* Google Font Import */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-        body {
-          font-family: 'Poppins', sans-serif;
-        }
-      `}</style>
+      
 
       {/* User Profile Component */}
       <UserProfile isVisible={showProfile} onClose={toggleProfile} showIcon={true} />

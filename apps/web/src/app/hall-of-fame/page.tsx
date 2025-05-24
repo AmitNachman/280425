@@ -71,25 +71,22 @@ export default function HallOfFame() {
   }
 
   return (
+    <div>
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50 p-6">
-      {/* Google Font Import */}
-      <style jsx global>{`
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
-        body {
-          font-family: 'Poppins', sans-serif;
-        }
-      `}</style>
+    <div className="max-w-4xl mx-auto">
+      {/* Header Section */}
+      <div className="text-center mb-12">
+        <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
+          Hall of Fame
+        </h1>
+        <p className="text-lg text-gray-600">
+          Our top learners with the highest scores
+        </p>
+      </div>
 
-      <div className="max-w-4xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent">
-            Hall of Fame
-          </h1>
-          <p className="text-lg text-gray-600">
-            Our top learners with the highest scores
-          </p>
-        </div>
+      {/* שאר הרכיבים שלנו כמו הטבלה או הפודיום ייכנסו כאן */}
+    </div>
+    </div>
 
         {/* Error Message */}
         {error && (
@@ -242,7 +239,6 @@ export default function HallOfFame() {
             Back to Topics
           </Link>
         </div>
-      </div>
     </div>
   );
 }

@@ -16,6 +16,8 @@ export async function POST(request: NextRequest) {
     const apiUrl = `${process.env.NEXT_PUBLIC_API_URL}/auth/validate`;
     console.log('Validating token at:', apiUrl);
     
+    console.log('API URL:', process.env.NEXT_PUBLIC_API_URL);
+
     // Forward validation request to backend
     const response = await fetch(apiUrl, {
       method: 'POST',

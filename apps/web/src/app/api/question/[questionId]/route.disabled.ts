@@ -18,10 +18,11 @@ function getUserIdFromToken(token: string): string | null {
  * עדכון שאלה עם תשובה ומשוב
  */
 export async function PATCH(
-  request: NextRequest,
-  { params }: { params: { questionId: string } }
+  request: NextRequest
 ) {
-  const questionId = params.questionId;
+  const url = new URL(request.url);
+  const pathname = url.pathname;
+  const questionId = decodeURIComponent(pathname.split("/").pop()!);
   console.log(`PATCH /api/question/${questionId} - Request received`);
   
   try {
@@ -80,7 +81,7 @@ export async function PATCH(
         success: false,
         error: "Failed to update question",
         details: error instanceof Error ? error.message : 'Unknown error',
-        QuestionId: params.questionId
+        QuestionId: questionId
       },
       { status: 500 }
     );

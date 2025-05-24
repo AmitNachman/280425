@@ -1,10 +1,9 @@
 // apps/web/src/app/api/tasks/[taskId]/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function PATCH(
-  request: NextRequest,
-  { params }: { params: { taskId: string } }
-) {
+export async function PATCH(request: NextRequest, { params }: any) {
+
+
   try {
     const taskId = params.taskId;
     
