@@ -9,9 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: .  # שורש המונורפו
 
     steps:
       - name: Checkout code
@@ -25,10 +22,10 @@ jobs:
       - name: Set environment variables (NEXT_PUBLIC_API_URL)
         run: echo "NEXT_PUBLIC_API_URL=https://unity-voice-plan.azurewebsites.net/api" >> $GITHUB_ENV
 
-      - name: Install all dependencies (root workspace)
+      - name: Install dependencies (monorepo root)
         run: npm install
 
-      - name: Build project
+      - name: Build web project using workspace
         run: npm run build --workspace=web
 
       - name: Upload artifact
@@ -66,6 +63,6 @@ jobs:
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'unity-voice-plan'
+          app-name: 'unityVoice-web' 
           slot-name: 'Production'
           package: .
