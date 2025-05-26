@@ -64,4 +64,4 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'unityVoice-web' 
-          package: .
+          package: apps/web/.next/standalone
