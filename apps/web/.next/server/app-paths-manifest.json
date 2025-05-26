@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/posts/verify/[postId]/route": "app/api/posts/verify/[postId]/route.js",
+  "/api/tasks/[taskId]/duration/route": "app/api/tasks/[taskId]/duration/route.js",
+  "/edit-profile/page": "app/edit-profile/page.js",
+  "/hall-of-fame/page": "app/hall-of-fame/page.js",
+  "/login/page": "app/login/page.js",
+  "/signup/page": "app/signup/page.js",
+  "/page": "app/page.js",
+  "/topics/page": "app/topics/page.js",
+  "/topics/[topicName]/tasks/flashcard/page": "app/topics/[topicName]/tasks/flashcard/page.js",
+  "/topics/[topicName]/tasks/conversation/page": "app/topics/[topicName]/tasks/conversation/page.js",
+  "/topics/[topicName]/tasks/quiz/page": "app/topics/[topicName]/tasks/quiz/page.js",
+  "/topics/[topicName]/tasks/post/page": "app/topics/[topicName]/tasks/post/page.js"
+}

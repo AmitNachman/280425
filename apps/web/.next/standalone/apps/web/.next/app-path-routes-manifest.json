@@ -1,0 +1,15 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/posts/verify/[postId]/route": "/api/posts/verify/[postId]",
+  "/api/tasks/[taskId]/duration/route": "/api/tasks/[taskId]/duration",
+  "/edit-profile/page": "/edit-profile",
+  "/hall-of-fame/page": "/hall-of-fame",
+  "/login/page": "/login",
+  "/signup/page": "/signup",
+  "/page": "/",
+  "/topics/page": "/topics",
+  "/topics/[topicName]/tasks/flashcard/page": "/topics/[topicName]/tasks/flashcard",
+  "/topics/[topicName]/tasks/conversation/page": "/topics/[topicName]/tasks/conversation",
+  "/topics/[topicName]/tasks/quiz/page": "/topics/[topicName]/tasks/quiz",
+  "/topics/[topicName]/tasks/post/page": "/topics/[topicName]/tasks/post"
+}
